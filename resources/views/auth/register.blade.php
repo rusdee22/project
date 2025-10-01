@@ -1,12 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>efefe</h1>
-</body>
-</html>
+@extends('layouts.app')
+@section('content')
+<form method="POST" action="{{ route('register') }}">
+  @csrf
+  <input type="text" name="name" placeholder="ชื่อ" required><br>
+  <input type="email" name="email" placeholder="อีเมล" required><br>
+  <input type="password" name="password" placeholder="รหัสผ่าน" required><br>
+  <input type="password" name="password_confirmation" placeholder="ยืนยันรหัส" required><br>
+  <button type="submit">สมัครสมาชิก</button>
+</form>
+@endsection
